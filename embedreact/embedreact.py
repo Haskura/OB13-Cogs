@@ -60,7 +60,7 @@ class EmbedReact(commands.Cog):
         if (
             await self.bot.cog_disabled_in_guild(self, message.guild) or  # Cog disabled in guild
             not await self.config.guild(message.guild).toggle() or  # EmbedReact toggled off
-            message.author.bot or  # Message author is a bot
+            # message.author.bot or  # Message author is a bot
             not reactions  # No reactions set in channel
         ):
             return
