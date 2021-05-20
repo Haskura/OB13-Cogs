@@ -31,6 +31,7 @@ from redbot.core.utils.chat_formatting import humanize_list
 
 # Thanks ZeLarp for the original RegEx
 URL_REGEX = r"<?https?:\/\/[^\s/$.?#].[^\s]*>?"
+SONDAGE_DATA = "Si vous ne voyez pas les informations du sondage, rendez-vous dans Paramètres Utilisateur > Texte & Images > Prévisualisation de Lien, et assurez-vous que l'interrupteur soit activé !"
 
 
 class EmbedReact(commands.Cog):
@@ -65,7 +66,8 @@ class EmbedReact(commands.Cog):
         ):
             return
 
-        match = re.search(URL_REGEX, message.content)
+        #match = re.search(URL_REGEX, message.content)
+        match = re.search(SONDAGE_DATA, message.content)
         if (
                 len(message.attachments) > 0 or
                 (
